@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public float speed = 5f;
+    float speed = 1f;
     private Rigidbody2D player;
 
     public Transform groundCheck;
@@ -34,8 +34,19 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        //run
+        if (Input.GetKey("left shift") == true)
+        {
+            print("player pressed shift");
+           
+            speed = 3f;
+        }
+        else
+        {
+            speed = 1f;
+            
+        }
 
-        float speed = 1f;
         //left
         if (Input.GetKey("a") == true)
         {
@@ -43,10 +54,6 @@ public class PlayerScript : MonoBehaviour
             transform.position = new Vector2(transform.position.x - (1*speed *Time.deltaTime), transform.position.y);
             animator.SetBool("walk", true);
             gameObject.transform.localScale = new Vector3(-2, 2, 2);
-
-
-
-
         }
         //right
         else if (Input.GetKey("d") == true)
@@ -55,18 +62,17 @@ public class PlayerScript : MonoBehaviour
             transform.position = new Vector2((1 * speed *Time.deltaTime) + transform.position.x, transform.position.y);
             animator.SetBool("walk", true);
             gameObject.transform.localScale = new Vector3(2, 2, 2);
-
-
         }
         else
         {
-            animator.SetBool("walk", false);
+            animator.SetBool("walk",false);
         }
-
+   
+        //jump
         print("isgrounded=" + isTouchingGround);
         if (Input.GetKeyDown("w") && isTouchingGround)
         {
-            rb.AddForce(new Vector3(0, 4, 0), ForceMode2D.Impulse);
+            rb.AddForce(new Vector3(0, 6, 0), ForceMode2D.Impulse);
             animator.SetBool("jump", true);
 
         }
@@ -74,5 +80,13 @@ public class PlayerScript : MonoBehaviour
         {
             animator.SetBool("jump", false);
         }
+        //attack
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            animator.SetTrigger("attack");
+        }
+
+  
+       
     }
 }
