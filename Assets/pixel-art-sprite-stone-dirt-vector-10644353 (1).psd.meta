@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pixel-art-sprite-stone-dirt-vector-10644353 (1)_0: 8898179946874447078
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Free-Nature-Backgrounds-Pixel-Art4_0: 8247741507342170158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
