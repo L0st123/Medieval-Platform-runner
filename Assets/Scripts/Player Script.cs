@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -15,6 +16,7 @@ public class PlayerScript : MonoBehaviour
     Rigidbody2D rb;
     public Animator animator;
     private SpriteRenderer spriteRenderer;
+    HelperScript helper;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,10 @@ public class PlayerScript : MonoBehaviour
         animator.SetBool("idle", true);
         player = GetComponent<Rigidbody2D>();
         rb = GetComponent<Rigidbody2D>();
+
+        // Add the helper script and store a reference to it                                               
+        helper = gameObject.AddComponent<HelperScript>();
+
 
 
 
@@ -39,12 +45,13 @@ public class PlayerScript : MonoBehaviour
         {
             print("player pressed shift");
            
-            speed = 3f;
+            speed = 4f;
+            animator.SetBool("run", true);
         }
         else
         {
             speed = 1f;
-            
+            animator.SetBool("run", false);
         }
 
         //left
@@ -53,7 +60,8 @@ public class PlayerScript : MonoBehaviour
             print("player pressed left");
             transform.position = new Vector2(transform.position.x - (1*speed *Time.deltaTime), transform.position.y);
             animator.SetBool("walk", true);
-            gameObject.transform.localScale = new Vector3(-2, 2, 2);
+            helper.FlipSprite(true);
+            
         }
         //right
         else if (Input.GetKey("d") == true)
@@ -61,7 +69,9 @@ public class PlayerScript : MonoBehaviour
             print("player pressed right");
             transform.position = new Vector2((1 * speed *Time.deltaTime) + transform.position.x, transform.position.y);
             animator.SetBool("walk", true);
-            gameObject.transform.localScale = new Vector3(2, 2, 2);
+            helper.FlipSprite(false);
+
+
         }
         else
         {
@@ -72,7 +82,7 @@ public class PlayerScript : MonoBehaviour
         print("isgrounded=" + isTouchingGround);
         if (Input.GetKeyDown("w") && isTouchingGround)
         {
-            rb.AddForce(new Vector3(0, 6, 0), ForceMode2D.Impulse);
+            rb.AddForce(new Vector3(0, 4, 0), ForceMode2D.Impulse);
             animator.SetBool("jump", true);
 
         }
