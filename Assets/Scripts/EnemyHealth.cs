@@ -19,12 +19,19 @@ public class EnemyHealth : MonoBehaviour
     {
         
     }
-    public void TakeDamage(int amount)
+    public void TakeDamageEnemy(int amount)
     {
         currentHealth -= amount;
         if(currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Death(); 
         }
     }
+    void Death()
+    {
+        this.GetComponent<Collider2D>().enabled = false;
+        this.GetComponent<EnemyScript>().enabled = false;
+        this.GetComponent<EnemyDamage>().enabled = false;
+    }
+   
 }

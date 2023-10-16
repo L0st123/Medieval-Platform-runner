@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      NicePng_old-scroll-png_8153991_0: 141460673179797620
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

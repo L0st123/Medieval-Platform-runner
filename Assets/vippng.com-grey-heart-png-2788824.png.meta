@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vippng.com-grey-heart-png-2788824_0: 6729988470416616810
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

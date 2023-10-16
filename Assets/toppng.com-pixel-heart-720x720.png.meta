@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      toppng.com-pixel-heart-720x720_0: 2069184183863721621
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

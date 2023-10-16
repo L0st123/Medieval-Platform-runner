@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.ReorderableList;
 using UnityEditor;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class PlayerScript : MonoBehaviour
     public Animator animator;
     private SpriteRenderer spriteRenderer;
     HelperScript helper;
+    int moving;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +43,7 @@ public class PlayerScript : MonoBehaviour
     {
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         //run
-        if (Input.GetKey("left shift") == true)
+        if (Input.GetKey("left shift") == true && moving ==1)
         {
             print("player pressed shift");
            
@@ -61,6 +63,7 @@ public class PlayerScript : MonoBehaviour
             transform.position = new Vector2(transform.position.x - (1*speed *Time.deltaTime), transform.position.y);
             animator.SetBool("walk", true);
             helper.FlipSprite(true);
+            moving = 1;
             
         }
         //right
@@ -70,12 +73,13 @@ public class PlayerScript : MonoBehaviour
             transform.position = new Vector2((1 * speed *Time.deltaTime) + transform.position.x, transform.position.y);
             animator.SetBool("walk", true);
             helper.FlipSprite(false);
-
+            moving = 1;
 
         }
         else
         {
             animator.SetBool("walk",false);
+            moving = 0;
         }
    
         //jump
