@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
-    public int attackDamage = 1;
+    public int attackDamage = 2;
     float nextAttackTime = 0f;
     public float AttackRate = 1f;
     

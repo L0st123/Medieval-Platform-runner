@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     public PlayerHealth playerHealth;
-    public int damage= 2;
+    public int damage= 1;
     public Animator animator;
     public Transform attackPoint;
     public float attackRange = 0.5f;

@@ -49,6 +49,8 @@ public class PlayerScript : MonoBehaviour
            
             speed = 4f;
             animator.SetBool("run", true);
+            animator.SetBool("walk", false);    
+            animator.SetBool("idle", false) ;
         }
         else
         {
@@ -84,7 +86,7 @@ public class PlayerScript : MonoBehaviour
    
         //jump
         print("isgrounded=" + isTouchingGround);
-        if (Input.GetKeyDown("w") && isTouchingGround)
+        if (Input.GetKeyDown("space") && isTouchingGround)
         {
             rb.AddForce(new Vector3(0, 4, 0), ForceMode2D.Impulse);
             animator.SetBool("jump", true);
