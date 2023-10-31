@@ -18,17 +18,17 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = 1.5f;
+        speed = 3f;
         distance = player.transform.position.x - transform.position.x;
         
         if (distance > 0)
         {
-            gameObject.transform.localScale = new Vector3(2, 2, 2);
+            gameObject.transform.localScale = new Vector3(4, 4, 4);
             print("flipped");
         }
         else
         {
-            gameObject.transform.localScale = new Vector3(-2, 2, 2);
+            gameObject.transform.localScale = new Vector3(-4, 4, 4);
         }
         if(distance <1 && distance >-1)
         {
@@ -36,7 +36,7 @@ public class EnemyScript : MonoBehaviour
             speed = 1;
         }
 
-        if (distance < 4 && distance > -4)
+        if (distance < 7 && distance > -7)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
             animator.SetBool("walk", true);

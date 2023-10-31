@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using Unity.VisualScripting.ReorderableList;
 using UnityEditor;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class PlayerScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     HelperScript helper;
     int moving;
+    public Transform Teleport;
 
     // Start is called before the first frame update
     void Start()
@@ -102,7 +104,9 @@ public class PlayerScript : MonoBehaviour
             animator.SetTrigger("attack");
         }
 
+
   
        
     }
+    
 }
