@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hologram1_0: 8416884768031823875
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

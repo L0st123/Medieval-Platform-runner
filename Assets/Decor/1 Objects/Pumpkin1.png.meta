@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pumpkin1_0: 1341312415467910784
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

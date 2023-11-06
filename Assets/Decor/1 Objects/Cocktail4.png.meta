@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cocktail4_0: -4549640046440907184
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

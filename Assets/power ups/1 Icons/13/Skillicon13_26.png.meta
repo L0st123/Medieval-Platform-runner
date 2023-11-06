@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Skillicon13_26_0: 8510966718858651064
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
