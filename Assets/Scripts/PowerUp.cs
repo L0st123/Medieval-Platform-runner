@@ -5,7 +5,7 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
 
-    public float increase = 5f;
+    public float increase = 100f;
     float speed = 3f;
     // Start is called before the first frame update
     void Start()
@@ -14,9 +14,11 @@ public class PowerUp : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnTriggerEnter2D(Collider2D collision)
+     void OnTriggerEnter2D(Collider2D collision)
     {
-
+        print("speed increased");
+        speed = increase;
+        Destroy(gameObject);    
     }
 }
   

@@ -27,27 +27,32 @@ public class HelperScript : MonoBehaviour
         }
         
     }
-    public void DoRayCollisionCheck()
+    public bool DoRayCollisionCheck( Vector2 direction, float xOffset, float yOffset )
     {
+        bool hitFlag = false;
         float rayLength = 0.5f; // length of raycast
 
 
         //cast a ray downward 
         RaycastHit2D hit;
 
-        hit = Physics2D.Raycast(transform.position, Vector2.down, rayLength, groundLayerMask);
+        Vector3 offset = new Vector3(xOffset, yOffset, 0);    
+
+        hit = Physics2D.Raycast(transform.position + offset, direction, rayLength, groundLayerMask);
 
         Color hitColor = Color.white;
-
 
         if (hit.collider != null)
         {
             print("Player has collided with Ground layer");
             hitColor = Color.green;
+            hitFlag = true;
         }
         // draw a debug ray to show ray position
         // You need to enable gizmos in the editor to see these
-        Debug.DrawRay(transform.position, Vector2.down * rayLength, hitColor);
+        Debug.DrawRay(transform.position + offset, direction * rayLength, hitColor);
+
+        return hitFlag;
 
     }
 
