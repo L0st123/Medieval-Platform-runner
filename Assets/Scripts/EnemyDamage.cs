@@ -29,7 +29,7 @@ public class EnemyDamage : MonoBehaviour
 
         if (Time.time >= nextAttackTime)
         {
-            if (distance < 1 && distance > -1)
+            if (distance < 2 && distance > -2)
             {
                 Attack();
                 nextAttackTime = Time.time + 1f / AttackRate;
